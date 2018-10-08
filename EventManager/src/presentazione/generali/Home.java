@@ -38,7 +38,6 @@ public class Home extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle(" Home");
         setLocation(new java.awt.Point(500, 250));
-        setPreferredSize(new java.awt.Dimension(300, 330));
 
         gestioneEventiLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         gestioneEventiLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -50,6 +49,11 @@ public class Home extends javax.swing.JFrame {
                 inserisciEventoButtonActionPerformed(evt);
             }
         });
+        inserisciEventoButton.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                inserisciEventoButtonKeyReleased(evt);
+            }
+        });
 
         ricercaEventoButton.setText("Ricerca evento");
         ricercaEventoButton.addActionListener(new java.awt.event.ActionListener() {
@@ -57,11 +61,21 @@ public class Home extends javax.swing.JFrame {
                 ricercaEventoButtonActionPerformed(evt);
             }
         });
+        ricercaEventoButton.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ricercaEventoButtonKeyReleased(evt);
+            }
+        });
 
         logoutButton.setText("Logout");
         logoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutButtonActionPerformed(evt);
+            }
+        });
+        logoutButton.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                logoutButtonKeyReleased(evt);
             }
         });
 
@@ -135,6 +149,24 @@ public class Home extends javax.swing.JFrame {
         new LoginController();
         this.dispose();
     }//GEN-LAST:event_logoutButtonActionPerformed
+
+    private void inserisciEventoButtonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inserisciEventoButtonKeyReleased
+        // TODO add your handling code here:
+        new InserisciEventoController();
+        this.dispose();
+    }//GEN-LAST:event_inserisciEventoButtonKeyReleased
+
+    private void ricercaEventoButtonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ricercaEventoButtonKeyReleased
+        // TODO add your handling code here:
+         new RicercaEventoController();
+        this.dispose();
+    }//GEN-LAST:event_ricercaEventoButtonKeyReleased
+
+    private void logoutButtonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_logoutButtonKeyReleased
+        // TODO add your handling code here:
+        new LoginController();
+        this.dispose();
+    }//GEN-LAST:event_logoutButtonKeyReleased
 
     /**
      * @param args the command line arguments

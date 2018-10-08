@@ -35,7 +35,7 @@ public class ErroreEliminazione extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Errore Eliminazione");
-        setLocation(new java.awt.Point(300, 100));
+        setLocation(new java.awt.Point(300, 400));
         setResizable(false);
 
         erroreLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N

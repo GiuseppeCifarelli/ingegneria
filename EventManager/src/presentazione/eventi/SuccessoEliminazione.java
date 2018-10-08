@@ -34,7 +34,7 @@ public class SuccessoEliminazione extends javax.swing.JFrame {
         tornAgestioneButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setLocation(new java.awt.Point(300, 200));
+        setLocation(new java.awt.Point(300, 400));
         setResizable(false);
 
         successoLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N

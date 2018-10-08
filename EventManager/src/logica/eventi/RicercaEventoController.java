@@ -71,21 +71,22 @@ public class RicercaEventoController {
     private DefaultTableModel createModel(ArrayList<Eventi> list){
         DefaultTableModel model;
         int i=0;
-        Object[][] o=new Object[list.size()][7];
-        String []col=new String [] {"Codice","Nome", "Categoria", "Data", "CittÃ ", "Prezzo"," Biglietti",};
+        Object[][] o=new Object[list.size()][8];
+        String []col=new String [] {"Codice","Nome","Descrizione", "Categoria", "Data", "Città ", "Prezzo"," Biglietti",};
         
         for(Eventi e:list){
             o[i][0]=e.getCodice();
             o[i][1]=e.getNome();
-            o[i][2]=e.getCategoria();
-            o[i][3]=e.getData();
-            o[i][4]=e.getCitta();
-            o[i][5]=e.getPrezzo();
-            o[i][6]=e.getBiglietti();
+            o[i][2]=e.getDescr();
+            o[i][3]=e.getCategoria();
+            o[i][4]=e.getData();
+            o[i][5]=e.getCitta();
+            o[i][6]=e.getPrezzo();
+            o[i][7]=e.getBiglietti();
             i++;
         }
         model = new DefaultTableModel(o, col){
-          boolean [] canEdit=new boolean[]{ false,false,false,false,false,false};
+          boolean [] canEdit=new boolean[]{ false,false,false,false,false,false,false,false};
           
           @Override
           public boolean isCellEditable(int rowIndex,int columnIndex){

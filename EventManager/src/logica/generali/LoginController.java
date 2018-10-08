@@ -13,9 +13,7 @@ import javax.swing.JFrame;
  * @author Dastler
  */
 public class LoginController{
-    private Login lFrame;
     public LoginController(){
-        lFrame=new Login(this);
-        lFrame.setVisible(true);
+        new Login(this).setVisible(true);
     }
 }

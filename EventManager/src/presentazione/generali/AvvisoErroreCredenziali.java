@@ -33,7 +33,7 @@ public class AvvisoErroreCredenziali extends javax.swing.JDialog {
         credenzErrateLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Avviso credenziali errate");
+        setTitle("Errore Credenziali");
         setLocation(new java.awt.Point(300, 200));
         setResizable(false);
 
@@ -83,7 +83,7 @@ public class AvvisoErroreCredenziali extends javax.swing.JDialog {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

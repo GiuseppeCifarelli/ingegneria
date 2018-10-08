@@ -76,7 +76,6 @@ public class InserisciEvento extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle(" Inserisci evento");
         setLocation(new java.awt.Point(300, 100));
-        setPreferredSize(new java.awt.Dimension(470, 520));
         setResizable(false);
 
         insEventoLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -138,6 +137,21 @@ public class InserisciEvento extends javax.swing.JFrame {
         jLabel1.setText("es. 23.7");
         jLabel1.setEnabled(false);
 
+        indietroButton.setText("Indietro");
+        indietroButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                indietroButtonActionPerformed(evt);
+            }
+        });
+
+        salvaButton.setText("Salva");
+        salvaButton.setEnabled(false);
+        salvaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salvaButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -146,34 +160,46 @@ public class InserisciEvento extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(insEventoLabel))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nomeLabel)
-                            .addComponent(descrizioneLabel)
-                            .addComponent(cittaLabel)
-                            .addComponent(dataLabel)
-                            .addComponent(categoriaLabel)
                             .addComponent(prezzoLabel)
                             .addComponent(bigliettiLabel)
                             .addComponent(addImgLabel))
                         .addGap(23, 23, 23)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(prezzoTextField)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(imgTextField)
+                            .addComponent(bigliettiSpinField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nomeLabel)
+                                    .addComponent(descrizioneLabel)
+                                    .addComponent(cittaLabel)
+                                    .addComponent(dataLabel)
+                                    .addComponent(categoriaLabel))
+                                .addGap(53, 53, 53)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(descrizioneTextField)
                                     .addComponent(nomeTextField)
                                     .addComponent(cittaComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(dataChooser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(prezzoTextField)
-                                    .addComponent(categoriaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(imgTextField)
-                            .addComponent(bigliettiSpinField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(categoriaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(75, 75, 75)
+                                .addComponent(insEventoLabel)))
+                        .addGap(0, 62, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addComponent(indietroButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(salvaButton)
+                .addGap(23, 23, 23))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,7 +226,7 @@ public class InserisciEvento extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(categoriaLabel)
                     .addComponent(categoriaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(prezzoLabel)
                     .addComponent(prezzoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -213,36 +239,19 @@ public class InserisciEvento extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addImgLabel)
                     .addComponent(imgTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(indietroButton)
+                    .addComponent(salvaButton))
+                .addGap(20, 20, 20))
         );
-
-        indietroButton.setText("Indietro");
-        indietroButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                indietroButtonActionPerformed(evt);
-            }
-        });
-
-        salvaButton.setText("Salva");
-        salvaButton.setEnabled(false);
-        salvaButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                salvaButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(indietroButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(salvaButton)
-                .addGap(36, 36, 36))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(26, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
@@ -251,11 +260,7 @@ public class InserisciEvento extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(indietroButton)
-                    .addComponent(salvaButton))
-                .addContainerGap())
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -292,12 +297,6 @@ public class InserisciEvento extends javax.swing.JFrame {
         else salvaButton.setEnabled(false);
     }//GEN-LAST:event_nomeTextFieldKeyReleased
 
-    private void descrizioneTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_descrizioneTextFieldKeyReleased
-        // TODO add your handling code here:
-        if(areFull()) salvaButton.setEnabled(true);
-        else salvaButton.setEnabled(false);
-    }//GEN-LAST:event_descrizioneTextFieldKeyReleased
-
     private void prezzoTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_prezzoTextFieldKeyReleased
         // TODO add your handling code here:
         if(areFull() && inputTextControl(prezzoTextField.getText())){
@@ -316,6 +315,12 @@ public class InserisciEvento extends javax.swing.JFrame {
         if(areFull()) salvaButton.setEnabled(true);
         else salvaButton.setEnabled(false);
     }//GEN-LAST:event_bigliettiSpinFieldPropertyChange
+
+    private void descrizioneTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_descrizioneTextFieldKeyReleased
+        // TODO add your handling code here:
+        if(areFull()) salvaButton.setEnabled(true);
+        else salvaButton.setEnabled(false);
+    }//GEN-LAST:event_descrizioneTextFieldKeyReleased
 
     /**
      * @param args the command line arguments

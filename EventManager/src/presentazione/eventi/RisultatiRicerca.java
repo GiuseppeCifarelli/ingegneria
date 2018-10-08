@@ -49,7 +49,7 @@ public class RisultatiRicerca extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Risultati Ricerca");
+        setTitle("Risultati ricerca");
         setLocation(new java.awt.Point(300, 150));
         setResizable(false);
 
@@ -79,6 +79,11 @@ public class RisultatiRicerca extends javax.swing.JFrame {
         eventiTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 eventiTableMouseClicked(evt);
+            }
+        });
+        eventiTable.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                eventiTableKeyReleased(evt);
             }
         });
         jScrollPane1.setViewportView(eventiTable);
@@ -172,6 +177,17 @@ public class RisultatiRicerca extends javax.swing.JFrame {
         new RicercaEventoController();
         this.dispose();
     }//GEN-LAST:event_indietroButtonActionPerformed
+
+    private void eventiTableKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_eventiTableKeyReleased
+        // TODO add your handling code here:
+        if(eventiTable.getSelectedRow()!=-1){
+            eliminaButton.setEnabled(true);
+            modificaButton.setEnabled(true);
+        }else {
+            modificaButton.setEnabled(false);
+            eliminaButton.setEnabled(false);
+        }
+    }//GEN-LAST:event_eventiTableKeyReleased
 
     /**
      * @param args the command line arguments

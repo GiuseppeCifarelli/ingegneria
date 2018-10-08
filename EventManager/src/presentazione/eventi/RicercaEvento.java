@@ -43,23 +43,22 @@ public class RicercaEvento extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        nomeTextField = new javax.swing.JTextField();
+        descTextField = new javax.swing.JTextField();
+        cittaComboBox = new javax.swing.JComboBox<>();
+        dataDalChooser = new com.toedter.calendar.JDateChooser();
+        ricercaButton = new javax.swing.JButton();
+        indietroButton = new javax.swing.JButton();
+        categoriaComboBox = new javax.swing.JComboBox<>();
         prezzoTextField = new javax.swing.JTextField();
-        jSpinField2 = new com.toedter.components.JSpinField();
+        prezzoSpinField = new com.toedter.components.JSpinField();
         jLabel8 = new javax.swing.JLabel();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        dataAlChooser = new com.toedter.calendar.JDateChooser();
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Event Manager - Ricerca evento");
+        setTitle("Ricerca evento");
         setLocation(new java.awt.Point(300, 150));
-        setPreferredSize(new java.awt.Dimension(470, 520));
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -80,36 +79,46 @@ public class RicercaEvento extends javax.swing.JFrame {
 
         jLabel9.setText("Prezzo :");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aosta", "Verbania", "Biella", "Novara", "Torino", "Vercelli", "Asti", "Alessandria", "Cuneo", "Savona", "Imperia", "La Spezia", "Genova", "Sondrio", "Como", "Lecco", "Varese", "Bergamo", "Milano", "Brescia", "Pavia", "Lodi", "Cremona", "Mantova", "Trento", "Bolzano", "Belluno", "Vicenza", "Treviso", "Verona", "Venezia", "Padova", "Rovigo", "Pordenone", "Gorizia", "Udine", "Trieste", "Piacenza-ParmaReggio", "Emilia", "Modena", "Bologna", "Ferrara", "Ravenna", "Forlì", "Rimini", "Massa", "Lucca", "Pistoia", "Prato", "Firenze", "Pisa", "Arezzo", "Livorno", "Siena", "Grosseto", "Perugia", "Terni", "Pesaro", "Ancona", "Macerata", "Ascoli", "Piceno", "Viterbo", "Rieti", "Roma", "Latina", "Frosinone", "Teramo", "Pescara", "L’Aquila", "Chieti", "Isernia", "Campobasso", "Avellino", "Napoli", "Benevento", "Caserta", "Salerno", "Foggia", "Bari", "Taranto", "Brindisi", "Potenza", "Matera", "Cosenza", "Crotone", "Catanzaro", "Vibo Valentia", "Reggio Calabria", "Lecce", "Trapani", "Palermo", "Messina", "Caltanissetta", "Agrigento", "Enna", "Catania", "Ragusa", "Siracusa", "Olbia Tempio", "Sassari", "Nuoro", "Oristano", "Ogliastra", "Medio Campidano", "Cagliari", "Carbonia Iglesias" }));
-        jComboBox1.setSelectedItem(null);
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        cittaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aosta", "Verbania", "Biella", "Novara", "Torino", "Vercelli", "Asti", "Alessandria", "Cuneo", "Savona", "Imperia", "La Spezia", "Genova", "Sondrio", "Como", "Lecco", "Varese", "Bergamo", "Milano", "Brescia", "Pavia", "Lodi", "Cremona", "Mantova", "Trento", "Bolzano", "Belluno", "Vicenza", "Treviso", "Verona", "Venezia", "Padova", "Rovigo", "Pordenone", "Gorizia", "Udine", "Trieste", "Piacenza-ParmaReggio", "Emilia", "Modena", "Bologna", "Ferrara", "Ravenna", "Forlì", "Rimini", "Massa", "Lucca", "Pistoia", "Prato", "Firenze", "Pisa", "Arezzo", "Livorno", "Siena", "Grosseto", "Perugia", "Terni", "Pesaro", "Ancona", "Macerata", "Ascoli", "Piceno", "Viterbo", "Rieti", "Roma", "Latina", "Frosinone", "Teramo", "Pescara", "L’Aquila", "Chieti", "Isernia", "Campobasso", "Avellino", "Napoli", "Benevento", "Caserta", "Salerno", "Foggia", "Bari", "Taranto", "Brindisi", "Potenza", "Matera", "Cosenza", "Crotone", "Catanzaro", "Vibo Valentia", "Reggio Calabria", "Lecce", "Trapani", "Palermo", "Messina", "Caltanissetta", "Agrigento", "Enna", "Catania", "Ragusa", "Siracusa", "Olbia Tempio", "Sassari", "Nuoro", "Oristano", "Ogliastra", "Medio Campidano", "Cagliari", "Carbonia Iglesias" }));
+        cittaComboBox.setSelectedItem(null);
+        cittaComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                cittaComboBoxActionPerformed(evt);
             }
         });
 
-        jDateChooser1.setDateFormatString("d/MM/yyyy");
+        dataDalChooser.setDateFormatString("d/MM/yyyy");
 
-        jButton3.setText("Ricerca");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        ricercaButton.setText("Ricerca");
+        ricercaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                ricercaButtonActionPerformed(evt);
+            }
+        });
+        ricercaButton.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ricercaButtonKeyReleased(evt);
             }
         });
 
-        jButton2.setText("Indietro");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        indietroButton.setText("Indietro");
+        indietroButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                indietroButtonActionPerformed(evt);
+            }
+        });
+        indietroButton.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                indietroButtonKeyReleased(evt);
             }
         });
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Cinema", "Spettacolo", "Conferenza", "Sport" }));
-        jComboBox3.setSelectedIndex(-1);
-        jComboBox3.setSelectedItem(null);
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+        categoriaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Cinema", "Spettacolo", "Conferenza", "Sport" }));
+        categoriaComboBox.setSelectedIndex(-1);
+        categoriaComboBox.setSelectedItem(null);
+        categoriaComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
+                categoriaComboBoxActionPerformed(evt);
             }
         });
 
@@ -118,7 +127,7 @@ public class RicercaEvento extends javax.swing.JFrame {
 
         jLabel8.setText("al :");
 
-        jDateChooser2.setDateFormatString("d/MM/yyyy");
+        dataAlChooser.setDateFormatString("d/MM/yyyy");
 
         jLabel10.setForeground(new java.awt.Color(255, 0, 0));
         jLabel10.setText("es. 23.7");
@@ -130,10 +139,14 @@ public class RicercaEvento extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jButton2)
+                .addComponent(indietroButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addComponent(ricercaButton)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(131, 131, 131))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,77 +155,71 @@ public class RicercaEvento extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel9)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel8))
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
                 .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSpinField2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField1)
-                            .addComponent(jComboBox1, 0, 142, Short.MAX_VALUE)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(prezzoTextField, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(prezzoTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                    .addComponent(prezzoSpinField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(descTextField)
+                    .addComponent(nomeTextField)
+                    .addComponent(cittaComboBox, 0, 142, Short.MAX_VALUE)
+                    .addComponent(dataDalChooser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(categoriaComboBox, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(dataAlChooser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(131, 131, 131))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(32, 32, 32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(descTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cittaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dataDalChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jLabel8))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(dataAlChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(jLabel6))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(23, 23, 23)
+                        .addComponent(categoriaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(prezzoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
-                    .addComponent(jSpinField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                    .addComponent(prezzoSpinField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(indietroButton)
+                    .addComponent(ricercaButton))
                 .addContainerGap())
         );
 
@@ -221,41 +228,41 @@ public class RicercaEvento extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void indietroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_indietroButtonActionPerformed
         // TODO add your handling code here:
         new HomeController();
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_indietroButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void ricercaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ricercaButtonActionPerformed
         // TODO add your handling code here:
         String nome=null;
         Date tmp;
         String desc=null,citta=null,categoria=null,dal=null,al=null;
         int nbiglietti=0;
         float prezzo=0;
-        if((nome=jTextField1.getText()).equals("")) nome=null;
-        if((desc=jTextField2.getText()).equals("")) desc=null;
-        if(jComboBox3.getSelectedItem()==null) categoria=null;
-        if(jComboBox1.getSelectedItem()==null) citta=null;
-        tmp=jDateChooser1.getDate();
+        if((nome=nomeTextField.getText()).equals("")) nome=null;
+        if((desc=descTextField.getText()).equals("")) desc=null;
+        if(categoriaComboBox.getSelectedItem()==null) categoria=null;
+        if(cittaComboBox.getSelectedItem()==null) citta=null;
+        tmp=dataDalChooser.getDate();
         if((dal=String.format("%1$td/%1$tm/%1$tY",tmp)).equals("null/null/null")) dal="null";
-        tmp=jDateChooser2.getDate();
+        tmp=dataAlChooser.getDate();
         if((al=String.format("%1$td/%1$tm/%1$tY",tmp)).equals("null/null/null")) al="null";
          
        
@@ -265,15 +272,46 @@ public class RicercaEvento extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(RicercaEvento.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_ricercaButtonActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void cittaComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cittaComboBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_cittaComboBoxActionPerformed
 
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+    private void categoriaComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoriaComboBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox3ActionPerformed
+    }//GEN-LAST:event_categoriaComboBoxActionPerformed
+
+    private void indietroButtonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_indietroButtonKeyReleased
+        // TODO add your handling code here:
+         new HomeController();
+         this.dispose();
+    }//GEN-LAST:event_indietroButtonKeyReleased
+
+    private void ricercaButtonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ricercaButtonKeyReleased
+        // TODO add your handling code here:
+        String nome=null;
+        Date tmp;
+        String desc=null,citta=null,categoria=null,dal=null,al=null;
+        int nbiglietti=0;
+        float prezzo=0;
+        if((nome=nomeTextField.getText()).equals("")) nome=null;
+        if((desc=descTextField.getText()).equals("")) desc=null;
+        if(categoriaComboBox.getSelectedItem()==null) categoria=null;
+        if(cittaComboBox.getSelectedItem()==null) citta=null;
+        tmp=dataDalChooser.getDate();
+        if((dal=String.format("%1$td/%1$tm/%1$tY",tmp)).equals("null/null/null")) dal="null";
+        tmp=dataAlChooser.getDate();
+        if((al=String.format("%1$td/%1$tm/%1$tY",tmp)).equals("null/null/null")) al="null";
+         
+       
+        try {
+            controller.eseguiRicerca(nome,desc,citta,dal,al,categoria,prezzo,nbiglietti,"null");
+            this.dispose();
+        } catch (IOException ex) {
+            Logger.getLogger(RicercaEvento.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_ricercaButtonKeyReleased
 
     /**
      * @param args the command line arguments
@@ -311,12 +349,12 @@ public class RicercaEvento extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
+    private javax.swing.JComboBox<String> categoriaComboBox;
+    private javax.swing.JComboBox<String> cittaComboBox;
+    private com.toedter.calendar.JDateChooser dataAlChooser;
+    private com.toedter.calendar.JDateChooser dataDalChooser;
+    private javax.swing.JTextField descTextField;
+    private javax.swing.JButton indietroButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -328,10 +366,10 @@ public class RicercaEvento extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private com.toedter.components.JSpinField jSpinField2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField nomeTextField;
+    private com.toedter.components.JSpinField prezzoSpinField;
     private javax.swing.JTextField prezzoTextField;
+    private javax.swing.JButton ricercaButton;
     // End of variables declaration//GEN-END:variables
     private boolean inputTextControl(String text1){
         return text1.matches("^[0-9]+[.]+[0-9]*" );
