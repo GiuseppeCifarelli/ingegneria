@@ -15,10 +15,6 @@
 </head>
 
 <body>
-<%@page import =  "Model.Eventi"%>
-<%
-Eventi eventoSelezionato = (Eventi) request.getAttribute("eventoSelezionato");
-%>
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
         <div class="container"><a class="navbar-brand logo" href="#">Event Manager</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
@@ -42,14 +38,23 @@ Eventi eventoSelezionato = (Eventi) request.getAttribute("eventoSelezionato");
             <div class="row">
                 <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
                     <div class="intro">
-                        <h1 class="text-center"><%out.println(eventoSelezionato.getNome()); %></h1>
+                        <%@page import =  "Model.Eventi"%>
+							<%
+							Eventi eventoSelezionato;
+							if(request.getAttribute("errore") == null) eventoSelezionato = (Eventi) request.getAttribute("eventoSelezionato");
+							else {
+								eventoSelezionato = (Eventi) session.getAttribute("ticketEventoAcquistare");
+							%>
+								<script type="text/javascript">alert("Errore numero ticket")</script>
+							<%}%>
+							<h1 class="text-center"><%out.println(eventoSelezionato.getNome()); %></h1>
                         <p class="text-center"> </p><img class="img-fluid" src="<%=eventoSelezionato.getNomeImmagine()%>"></div>
                     <div class="text">
                         <% out.println("<p>"+eventoSelezionato.getDescr()+"</p>"); %>
                         <p>Prezzo Biglietto : <% out.println(eventoSelezionato.getPrezzo()); %> </p>
                         <p>Ticket Disponibili : <% out.println(eventoSelezionato.getBiglietti()); %> </p>
                         <% if(session.getAttribute("client") != null) { %>
-                        	<form name = "formCarrello" method = "GET" action = "payment-page.jsp" >
+                        	<form name = "formCarrello" method = "GET" action = "ControlloFormNumeroTickets" >
                         		<%session.setAttribute("ticketEventoAcquistare", eventoSelezionato);%>
                         		<input type="number" name = "numeroTickets" />
                         		<button class="btn btn-primary" type="submit">Compra!</button>
