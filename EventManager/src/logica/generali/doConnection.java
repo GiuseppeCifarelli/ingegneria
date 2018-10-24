@@ -14,18 +14,17 @@ import presentazione.generali.Home;
  * @author Dastler
  */
 public class doConnection {
-    doConnection connessione=null;
      public static Socket socket=null;
      public static BufferedReader in=null, stdIn=null;
      public static PrintWriter out=null;
     public doConnection(){
-        if(connessione==null) connessione=this;
+       
     }
     public boolean connetti(String user, String pwd){
         try
             {
                 // open a socket connection
-                socket = new Socket("localhost", 5000);
+                socket = new Socket("localhost", 8081);
 			 System.out.println("EchoClient: started");
 			 System.out.println("Client Socket: "+ socket);
 			 // creazione stream di input da socket
@@ -45,9 +44,7 @@ public class doConnection {
                                  out.println(user);
 				 out.println(pwd);
                                  boolean  ret=in.readLine().equals("ok");
-				 //while(!ret) ret=in.readLine().equals("ok");
-                                 if(ret) return true;
-                                 else return false;
+                                 return ret;
             }
             catch(Exception e) { System.out.println(e.getMessage());}
         return false;

@@ -21,6 +21,7 @@ public class Login extends javax.swing.JFrame {
     public Login(LoginController contr) {
         lController=contr;
         initComponents();
+        
     }
 
     /**
@@ -58,18 +59,8 @@ public class Login extends javax.swing.JFrame {
                 accediButtonActionPerformed(evt);
             }
         });
-        accediButton.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                accediButtonKeyReleased(evt);
-            }
-        });
 
         usernameTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        usernameTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameTextFieldActionPerformed(evt);
-            }
-        });
 
         passwordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         passwordField.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -140,9 +131,9 @@ public class Login extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(25, 25, 25)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,17 +146,19 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void usernameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTextFieldActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_usernameTextFieldActionPerformed
-
     private void accediButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accediButtonActionPerformed
-        if(!new doConnection().connetti(usernameTextField.getText(),passwordField.getText())){ 
-            new AvvisoErroreCredenziali(this,true).setVisible(true);
-            this.dispose();
-        }else{
-            new HomeController();    
+       
+        try{
+            if(lController.conn(usernameTextField.getText(),passwordField.getText())){ 
+                 new HomeController();    
+                this.dispose();
+            }else{
+               new AvvisoErroreCredenziali(this,true).setVisible(true);
+                this.dispose();
+            }
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            new AvvisoErroreConnessione(this,true).setVisible(true);  
             this.dispose();
         }
     }//GEN-LAST:event_accediButtonActionPerformed
@@ -174,18 +167,6 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         passwordField.setText("");
     }//GEN-LAST:event_passwordFieldMouseClicked
-
-    private void accediButtonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_accediButtonKeyReleased
-        // TODO add your handling code here:
-        if(!new doConnection().connetti(usernameTextField.getText(),passwordField.getText())){ 
-            avviso=new AvvisoErroreCredenziali(this,true);
-            avviso.setVisible(true);
-            this.dispose();
-        }else{
-            new HomeController();    
-            this.dispose();
-        }
-    }//GEN-LAST:event_accediButtonKeyReleased
 
     /**
      * @param args the command line arguments

@@ -33,10 +33,18 @@ public class ModificaEventoController {
         doConnection.out.println(prezzo);
         doConnection.out.println(nBiglDisponibili);
         doConnection.out.println(ImgPath);
+        /*
         String ok;
         while((ok=doConnection.in.readLine())==null);
             if(ok.equals("Errore"))return false;
             return true;
+       */
+        System.out.println(doConnection.in.readLine());
+        while(!doConnection.in.readLine().equals("avanti"));
+        String ok = doConnection.in.readLine();
+        System.out.println("valore di ok : " + ok);
+            if(ok.equals("Errore")) {System.out.println("evento non cancellato");return false;}
+            return true;    
     }
     
 }

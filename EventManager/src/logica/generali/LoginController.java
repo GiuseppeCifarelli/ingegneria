@@ -16,4 +16,8 @@ public class LoginController{
     public LoginController(){
         new Login(this).setVisible(true);
     }
+    public boolean conn(String user, String pasw){
+        return new doConnection().connetti(user,pasw);
+         
+    }
 }

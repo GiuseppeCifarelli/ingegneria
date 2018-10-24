@@ -25,9 +25,11 @@ public class EliminaEventoController {
     public boolean eseguiEliminazione(Integer codEvento) throws IOException{
         doConnection.out.println(4);
         doConnection.out.println(codEvento);
-        String ok;
-        while((ok=doConnection.in.readLine())==null);
-            if(ok.equals("Errore")) return false;
+        System.out.println(doConnection.in.readLine());
+        while(!doConnection.in.readLine().equals("avanti"));
+        String ok = doConnection.in.readLine();
+        System.out.println("valore di ok : " + ok);
+            if(ok.equals("Errore")) {System.out.println("evento non cancellato");return false;}
             return true;    
     }
 }

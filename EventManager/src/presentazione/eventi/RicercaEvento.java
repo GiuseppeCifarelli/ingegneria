@@ -37,14 +37,12 @@ public class RicercaEvento extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         nomeTextField = new javax.swing.JTextField();
-        descTextField = new javax.swing.JTextField();
         cittaComboBox = new javax.swing.JComboBox<>();
         dataDalChooser = new com.toedter.calendar.JDateChooser();
         ricercaButton = new javax.swing.JButton();
@@ -66,8 +64,6 @@ public class RicercaEvento extends javax.swing.JFrame {
         jLabel1.setText("Ricerca evento");
 
         jLabel2.setText("Nome evento : ");
-
-        jLabel3.setText("Descrizione : ");
 
         jLabel4.setText("Città : ");
 
@@ -113,7 +109,7 @@ public class RicercaEvento extends javax.swing.JFrame {
             }
         });
 
-        categoriaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Cinema", "Spettacolo", "Conferenza", "Sport" }));
+        categoriaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Spettacolo", "Musica", "Sport" }));
         categoriaComboBox.setSelectedIndex(-1);
         categoriaComboBox.setSelectedItem(null);
         categoriaComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -151,7 +147,6 @@ public class RicercaEvento extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(jLabel3)
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
@@ -162,7 +157,6 @@ public class RicercaEvento extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(prezzoTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
                     .addComponent(prezzoSpinField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(descTextField)
                     .addComponent(nomeTextField)
                     .addComponent(cittaComboBox, 0, 142, Short.MAX_VALUE)
                     .addComponent(dataDalChooser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -177,15 +171,11 @@ public class RicercaEvento extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(descTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(cittaComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -212,7 +202,7 @@ public class RicercaEvento extends javax.swing.JFrame {
                     .addComponent(prezzoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(prezzoSpinField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -237,7 +227,7 @@ public class RicercaEvento extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -257,9 +247,10 @@ public class RicercaEvento extends javax.swing.JFrame {
         int nbiglietti=0;
         float prezzo=0;
         if((nome=nomeTextField.getText()).equals("")) nome=null;
-        if((desc=descTextField.getText()).equals("")) desc=null;
-        if(categoriaComboBox.getSelectedItem()==null) categoria=null;
-        if(cittaComboBox.getSelectedItem()==null) citta=null;
+        if((categoria=(String)categoriaComboBox.getSelectedItem())==null) categoria=null;
+        if((citta=(String)cittaComboBox.getSelectedItem())==null) citta=null;
+        prezzo=Float.parseFloat(prezzoTextField.getText());
+        nbiglietti=prezzoSpinField.getValue();
         tmp=dataDalChooser.getDate();
         if((dal=String.format("%1$td/%1$tm/%1$tY",tmp)).equals("null/null/null")) dal="null";
         tmp=dataAlChooser.getDate();
@@ -290,15 +281,16 @@ public class RicercaEvento extends javax.swing.JFrame {
 
     private void ricercaButtonKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ricercaButtonKeyReleased
         // TODO add your handling code here:
-        String nome=null;
+       String nome=null;
         Date tmp;
         String desc=null,citta=null,categoria=null,dal=null,al=null;
         int nbiglietti=0;
         float prezzo=0;
         if((nome=nomeTextField.getText()).equals("")) nome=null;
-        if((desc=descTextField.getText()).equals("")) desc=null;
-        if(categoriaComboBox.getSelectedItem()==null) categoria=null;
-        if(cittaComboBox.getSelectedItem()==null) citta=null;
+        if((categoria=(String)categoriaComboBox.getSelectedItem())==null) categoria=null;
+        if((citta=(String)cittaComboBox.getSelectedItem())==null) citta=null;
+        prezzo=Float.parseFloat(prezzoTextField.getText());
+        nbiglietti=prezzoSpinField.getValue();
         tmp=dataDalChooser.getDate();
         if((dal=String.format("%1$td/%1$tm/%1$tY",tmp)).equals("null/null/null")) dal="null";
         tmp=dataAlChooser.getDate();
@@ -353,12 +345,10 @@ public class RicercaEvento extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cittaComboBox;
     private com.toedter.calendar.JDateChooser dataAlChooser;
     private com.toedter.calendar.JDateChooser dataDalChooser;
-    private javax.swing.JTextField descTextField;
     private javax.swing.JButton indietroButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -372,7 +362,7 @@ public class RicercaEvento extends javax.swing.JFrame {
     private javax.swing.JButton ricercaButton;
     // End of variables declaration//GEN-END:variables
     private boolean inputTextControl(String text1){
-        return text1.matches("^[0-9]+[.]+[0-9]*" );
+        return text1.matches("^[0-9]*" ) || text1.matches("^[0-9]+[.0-9]*");
     
     } 
 }

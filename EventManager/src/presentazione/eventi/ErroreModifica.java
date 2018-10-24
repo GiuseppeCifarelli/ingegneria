@@ -5,6 +5,8 @@
  */
 package presentazione.eventi;
 
+import logica.generali.HomeController;
+
 /**
  *
  * @author Dastler
@@ -73,6 +75,8 @@ public class ErroreModifica extends javax.swing.JFrame {
 
     private void tornAgestioneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tornAgestioneButtonActionPerformed
         // TODO add your handling code here:
+    	new HomeController();
+    	this.dispose();
     }//GEN-LAST:event_tornAgestioneButtonActionPerformed
 
     /**

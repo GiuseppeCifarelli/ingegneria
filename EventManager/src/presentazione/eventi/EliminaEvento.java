@@ -5,6 +5,7 @@
  */
 package presentazione.eventi;
 
+import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
 import data.Eventi;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -122,8 +123,10 @@ public class EliminaEvento extends javax.swing.JFrame {
                 new ErroreEliminazione().setVisible(true);
                 this.dispose();
             }
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(EliminaEvento.class.getName()).log(Level.SEVERE, null, ex);
+            new ErroreEliminazione().setVisible(true);
+            this.dispose();
         }
     }//GEN-LAST:event_eliminaButtonActionPerformed
 

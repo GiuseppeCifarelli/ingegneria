@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="dist/EventManager2.jar"/>
+	<classpathentry kind="lib" path="dist/lib/beansbinding-1.2.1.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="dist/lib/jdbc.jar"/>
+	<classpathentry kind="lib" path="dist/lib/mssql-jdbc-7.0.0.jre10.jar"/>
+	<classpathentry kind="lib" path="dist/lib/mssql-jdbc-7.0.0.jre8.jar"/>
+	<classpathentry kind="lib" path="dist/lib/mysql-connector-java.jar"/>
+	<classpathentry kind="lib" path="dist/run2057203552/EventManager2.jar"/>
+	<classpathentry kind="lib" path="dist/run2057203552/lib/beansbinding-1.2.1.jar"/>
+	<classpathentry kind="lib" path="dist/run2057203552/lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="dist/run2057203552/lib/jdbc.jar"/>
+	<classpathentry kind="lib" path="dist/run2057203552/lib/mssql-jdbc-7.0.0.jre10.jar"/>
+	<classpathentry kind="lib" path="dist/run2057203552/lib/mssql-jdbc-7.0.0.jre8.jar"/>
+	<classpathentry kind="lib" path="dist/run2057203552/lib/mysql-connector-java.jar"/>
+	<classpathentry kind="lib" path="dist/run2076719725/EventManager2.jar"/>
+	<classpathentry kind="lib" path="dist/run2076719725/lib/beansbinding-1.2.1.jar"/>
+	<classpathentry kind="lib" path="dist/run2076719725/lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="dist/run2076719725/lib/jdbc.jar"/>
+	<classpathentry kind="lib" path="dist/run2076719725/lib/mssql-jdbc-7.0.0.jre10.jar"/>
+	<classpathentry kind="lib" path="dist/run2076719725/lib/mssql-jdbc-7.0.0.jre8.jar"/>
+	<classpathentry kind="lib" path="dist/run2076719725/lib/mysql-connector-java.jar"/>
+	<classpathentry kind="lib" path="dist/run350640608/EventManager2.jar"/>
+	<classpathentry kind="lib" path="dist/run350640608/lib/beansbinding-1.2.1.jar"/>
+	<classpathentry kind="lib" path="dist/run350640608/lib/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="dist/run350640608/lib/jdbc.jar"/>
+	<classpathentry kind="lib" path="dist/run350640608/lib/mssql-jdbc-7.0.0.jre10.jar"/>
+	<classpathentry kind="lib" path="dist/run350640608/lib/mssql-jdbc-7.0.0.jre8.jar"/>
+	<classpathentry kind="lib" path="dist/run350640608/lib/mysql-connector-java.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

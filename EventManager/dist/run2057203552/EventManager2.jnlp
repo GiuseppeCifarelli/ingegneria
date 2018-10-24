@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="EventManager2.jnlp">
+  <information>
+    <title>EventManager2</title>
+    <vendor>Dastler</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="EventManager2.jar" size="114219" download="eager" />
+    <jar href="lib\beansbinding-1.2.1.jar" size="631289" download="eager" />
+    <jar href="lib\jcalendar-1.4.jar" size="165052" download="eager" />
+    <jar href="lib\jdbc.jar" size="474964" download="eager" />
+    <jar href="lib\mssql-jdbc-7.0.0.jre10.jar" size="1178666" download="eager" />
+    <jar href="lib\mssql-jdbc-7.0.0.jre8.jar" size="1166240" download="eager" />
+    <jar href="lib\mysql-connector-java.jar" size="566623" download="eager" />
+  </resources>
+  <application-desc main-class="presentazione.generali.Login"  name="EventManager2" >
+  </application-desc>
+  <update check="always"/>
+</jnlp>

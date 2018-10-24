@@ -87,11 +87,6 @@ public class ModificaEvento extends javax.swing.JFrame {
         });
 
         descrizioneTextField.setText(daModificare.getDescr());
-        descrizioneTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                descrizioneTextFieldActionPerformed(evt);
-            }
-        });
         descrizioneTextField.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 descrizioneTextFieldKeyReleased(evt);
@@ -218,9 +213,9 @@ public class ModificaEvento extends javax.swing.JFrame {
                             .addComponent(nomeLabel))
                         .addGap(66, 66, 66)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(descrizioneTextField, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nomeTextField, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cittaComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, 142, Short.MAX_VALUE)))
+                            .addComponent(cittaComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, 142, Short.MAX_VALUE)
+                            .addComponent(descrizioneTextField, javax.swing.GroupLayout.Alignment.LEADING)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(122, 122, 122)
                         .addComponent(jLabel2)))
@@ -228,9 +223,9 @@ public class ModificaEvento extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel2)
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
@@ -273,7 +268,7 @@ public class ModificaEvento extends javax.swing.JFrame {
                         .addGap(9, 9, 9)
                         .addComponent(addImgLabel))
                     .addComponent(imgTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(salvaButton)
                     .addComponent(indietroButton))
@@ -289,7 +284,7 @@ public class ModificaEvento extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,7 +305,7 @@ public class ModificaEvento extends javax.swing.JFrame {
 
     private void prezzoTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_prezzoTextFieldKeyReleased
         // TODO add your handling code here:
-        if(areFull() && inputTextControl(prezzoTextField.getText())){
+        if(areFull()){
             salvaButton.setEnabled(true);
             jLabel1.setEnabled(false);
         }
@@ -368,10 +363,6 @@ public class ModificaEvento extends javax.swing.JFrame {
         if(areFull()) salvaButton.setEnabled(true);
         else salvaButton.setEnabled(false);
     }//GEN-LAST:event_descrizioneTextFieldKeyReleased
-
-    private void descrizioneTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descrizioneTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_descrizioneTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -437,10 +428,10 @@ public class ModificaEvento extends javax.swing.JFrame {
     private javax.swing.JButton salvaButton;
     // End of variables declaration//GEN-END:variables
     private boolean areFull(){
-        return !nomeTextField.getText().isEmpty() && !descrizioneTextField.getText().isEmpty()&& !prezzoTextField.getText().isEmpty() && bigliettiSpinField.getValue()>0 ; 
+        return inputTextControl(prezzoTextField.getText()) && !nomeTextField.getText().isEmpty() && !descrizioneTextField.getText().isEmpty()&& !prezzoTextField.getText().isEmpty() && bigliettiSpinField.getValue()>0 ; 
     }
     private boolean inputTextControl(String text1){
-        return text1.matches("^[0-9]+[.]+[0-9]*" );
+        return text1.matches("^[0-9]*" ) || text1.matches("^[0-9]+[.0-9]*");
     
     }
 }
