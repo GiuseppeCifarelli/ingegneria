@@ -65,15 +65,15 @@ public class RicercaEvento extends javax.swing.JFrame {
 
         jLabel2.setText("Nome evento : ");
 
-        jLabel4.setText("Città : ");
+        jLabel4.setText("Citt� : ");
 
         jLabel5.setText("Dal :");
 
         jLabel6.setText("Categoria :");
 
-        jLabel7.setText("N° biglietti disponibili :");
+        jLabel7.setText("N� biglietti disponibili :");
 
-        jLabel9.setText("Prezzo :");
+        jLabel9.setText("Prezzo max :");
 
         cittaComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aosta", "Verbania", "Biella", "Novara", "Torino", "Vercelli", "Asti", "Alessandria", "Cuneo", "Savona", "Imperia", "La Spezia", "Genova", "Sondrio", "Como", "Lecco", "Varese", "Bergamo", "Milano", "Brescia", "Pavia", "Lodi", "Cremona", "Mantova", "Trento", "Bolzano", "Belluno", "Vicenza", "Treviso", "Verona", "Venezia", "Padova", "Rovigo", "Pordenone", "Gorizia", "Udine", "Trieste", "Piacenza-ParmaReggio", "Emilia", "Modena", "Bologna", "Ferrara", "Ravenna", "Forlì", "Rimini", "Massa", "Lucca", "Pistoia", "Prato", "Firenze", "Pisa", "Arezzo", "Livorno", "Siena", "Grosseto", "Perugia", "Terni", "Pesaro", "Ancona", "Macerata", "Ascoli", "Piceno", "Viterbo", "Rieti", "Roma", "Latina", "Frosinone", "Teramo", "Pescara", "L’Aquila", "Chieti", "Isernia", "Campobasso", "Avellino", "Napoli", "Benevento", "Caserta", "Salerno", "Foggia", "Bari", "Taranto", "Brindisi", "Potenza", "Matera", "Cosenza", "Crotone", "Catanzaro", "Vibo Valentia", "Reggio Calabria", "Lecce", "Trapani", "Palermo", "Messina", "Caltanissetta", "Agrigento", "Enna", "Catania", "Ragusa", "Siracusa", "Olbia Tempio", "Sassari", "Nuoro", "Oristano", "Ogliastra", "Medio Campidano", "Cagliari", "Carbonia Iglesias" }));
         cittaComboBox.setSelectedItem(null);
